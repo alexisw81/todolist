@@ -6,3 +6,11 @@
         flex-direction: column;
     }
 }
+
+.task-done {
+    text-decoration: line-through;
+}
+
+.task-input {
+    width: 100%;
+}
