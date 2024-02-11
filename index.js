@@ -11,13 +11,23 @@ taskInput.addEventListener("keypress", function (event) {
     let value = taskInput.value;
     if (event.key === "Enter") {
         //converts input value into button on task list
+
+        
         newTask = document.createElement('button')
         const newTaskValue = document.createTextNode(value);
         newTask.appendChild(newTaskValue);
         document.getElementById("list").appendChild(newTask);
         newTask.classList.add("task");
+
+        //Adding the strike toggle
+        newTask.addEventListener("click", function () {
+            this.classList.toggle("task-done");
+
+        })
+
+
         //TODO Add new buttons to click event loop
-        console.log(newTask);
+            console.log(newTask);
         return (newTask);
 
     }
@@ -26,7 +36,7 @@ taskInput.addEventListener("keypress", function (event) {
 
 //loop through the buttons to create a click event
 function click() {
-    task.push(newTask);
+    
     for (i = 0; i < task.length; i++) {
         console.log(task);
         task[i].addEventListener("click", function () {
