@@ -1,16 +1,80 @@
-.list-container {
-    width: 50%;
+//Font Family
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zeyada&display=swap');
 
+
+//Colors and Fonts
+:root{
+    --color-primary: #9747FF;
+    --color-secondary: #fbf3ff;
+    --primary-font: "Indie Flower", cursive;
+    
+      
+      
+}
+
+*, body,html{
+    font-family: var(--primary-font);
+}
+
+body{
+    height:100vh;
+    width:100%;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//To Do List Title
+h1{
+    text-transform: uppercase;
+    font-family: circular;
+}
+
+.list-container {
+    width: 500px;
+    background-color: var(--color-secondary);
+    padding:20px;
+    height:90vh;
+    overflow: scroll;
     .list {
         display: flex;
         flex-direction: column;
     }
 }
 
+.task{
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    &:before{
+        content: url(Images/icon-unchecked.svg);
+        top: 5px;
+        position: relative;
+    }
+}
 .task-done {
     text-decoration: line-through;
+    opacity: .5;
+    &:before{
+        content: url(Images/icon-checked.svg);
+    }
 }
 
 .task-input {
     width: 100%;
+    border: none;
+    border-bottom: solid 5px var(--color-primary);
+    font-size: 1.5rem;
+    background-color: var(--color-secondary);
+    margin-bottom: 20px;
+    &:focus-visible{
+        outline: none;
+    }
 }

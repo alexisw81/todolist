@@ -9,10 +9,8 @@ click();
 //when click enter 
 taskInput.addEventListener("keypress", function (event) {
     let value = taskInput.value;
-    if (event.key === "Enter") {
+    if (event.key === "Enter") {``
         //converts input value into button on task list
-
-        
         newTask = document.createElement('button')
         const newTaskValue = document.createTextNode(value);
         newTask.appendChild(newTaskValue);
@@ -25,9 +23,7 @@ taskInput.addEventListener("keypress", function (event) {
 
         })
 
-
-        //TODO Add new buttons to click event loop
-            console.log(newTask);
+        //TODO: Clear the input field
         return (newTask);
 
     }
@@ -42,6 +38,8 @@ function click() {
         task[i].addEventListener("click", function () {
             //When task button is clicked, strike through the text
             this.classList.toggle("task-done");
+
+            //Move button to bottom of list
 
         })
     };
