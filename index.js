@@ -22,8 +22,8 @@ taskInput.addEventListener("keypress", function (event) {
             this.classList.toggle("task-done");
 
         })
-
-        //TODO: Clear the input field
+        //Clearing input value
+        taskInput.value = "";
         return (newTask);
 
     }
